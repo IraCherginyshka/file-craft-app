@@ -1,5 +1,18 @@
 {
   "name": "file-craft-app",
+  "description": "This is a pet project to learn AWS, Docker, and Kubernetes.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IraCherginyshka/file-craft-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IraCherginyshka/file-craft-app/issues"
+  },
+  "homepage": "https://github.com/IraCherginyshka/file-craft-app#readme",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,8 +27,10 @@
     "@radix-ui/react-separator": "^1.1.4",
     "@radix-ui/react-slot": "^1.2.0",
     "@radix-ui/react-tooltip": "^1.2.4",
+    "axios": "^1.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "lucide-react": "^0.503.0",
     "next": "15.3.1",
     "next-themes": "^0.4.6",
@@ -31,6 +46,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
+    "eslint-config-prettier": "^10.1.2",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
     "prettier": "3.5.3",
