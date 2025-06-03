@@ -1,0 +1,12 @@
+Flow in 3-Layered Architecture:
+- The client sends a request.
+- The appropriate controller receives the request based on the URL.
+- The controller calls the service to handle the incoming request.
+- The service requests data from the repository to retrieve the necessary data.
+- The service processes the data retrieved from the repository, and passes the data to the controller.
+- The controller delivers the result (response) from the service to the client.
+
+
+Controller Layer contains the app programming interface (API) routes of the app.
+Its only job is to return a response from the server.
+It deals with the request from the client and return the response of the server.
