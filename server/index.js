@@ -1,9 +1,10 @@
-const express = require("express");
-const usersRoutes = require("./routes/users");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import router from "./routes/index.js";
 
 // set up access to the .env.development file with variables
-require("dotenv").config({ path: `../.env.${process.env.NODE_ENV}` });
+dotenv.config({ path: `../.env.${process.env.NODE_ENV}` });
 
 const app = express();
 // MIDDLEWARES
@@ -36,18 +37,11 @@ app.use(express.urlencoded({ extended: true }));
 // 4.	Backend records file metadata in DB (filename, owner, date, etc.)
 // 5.	For download, frontend requests /files/:id/download-url → gets a time-limited signed URL
 
-app.get("/", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM users LIMIT 1");
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("DB error");
-  }
+app.get("/", (req, res) => {
+  res.status(200).send("ok");
 });
 
-// /users/{+ route from routes files }
-app.use("/users", usersRoutes);
+app.use(router);
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}!`);
