@@ -1,0 +1,14 @@
+Flow in 3-Layered Architecture:
+- The client sends a request.
+- The appropriate controller receives the request based on the URL.
+- The controller calls the service to handle the incoming request.
+- The service requests data from the repository to retrieve the necessary data.
+- The service processes the data retrieved from the repository, and passes the data to the controller.
+- The controller delivers the result (response) from the service to the client.
+
+
+
+Data Access Layer (DAL) has access to the database to create, delete, or edit data.
+It is where all the request and response from server logic is handled.
+This layer may include Hypertext Transfer Protocol or
+http requests to the server if there is no database connected directly into the app.
