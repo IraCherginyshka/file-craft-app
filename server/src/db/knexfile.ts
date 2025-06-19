@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import { Knex } from 'knex';
 
 // todo prod
-dotenv.config({ path: `../.env.${process.env.NODE_ENV}` });
+dotenv.config();
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
@@ -48,7 +48,5 @@ const config: Knex.Config = {
   //   }
   // }
 };
-
 console.log(config);
-
 export default config;

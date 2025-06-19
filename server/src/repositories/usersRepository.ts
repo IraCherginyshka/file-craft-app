@@ -1,5 +1,4 @@
 import db from '../db';
-import { User } from '../models/user';
 
 export const createUserRepository = (
   firstName: any,

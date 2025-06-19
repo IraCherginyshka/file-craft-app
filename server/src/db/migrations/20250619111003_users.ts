@@ -1,9 +1,6 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-// use underscore
-export async function up(knex) {
+import type { Knex } from 'knex';
+
+export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('users', (table) => {
     table.increments('id');
     table.string('email').notNullable().unique();
@@ -13,6 +10,6 @@ export async function up(knex) {
   });
 }
 
-export async function down(knex) {
+export async function down(knex: Knex): Promise<void> {
   return knex.schema.dropTable('person');
 }

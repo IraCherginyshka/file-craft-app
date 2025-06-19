@@ -5,8 +5,9 @@ import dotenv from 'dotenv';
 import router from './routes';
 import { errorHandler } from './middlewares/errorHandler';
 
-// set up access to the .env.development file with variables
-dotenv.config({ path: `../.env.${process.env.NODE_ENV}` });
+// set up access to the .env file with variables
+// dotenv.config({ path: `../.env.${process.env.NODE_ENV}` });
+dotenv.config();
 
 const app = express();
 // MIDDLEWARES
