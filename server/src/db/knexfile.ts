@@ -1,4 +1,5 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+import { Knex } from 'knex';
 
 // todo prod
 dotenv.config({ path: `../.env.${process.env.NODE_ENV}` });
@@ -12,23 +13,22 @@ dotenv.config({ path: `../.env.${process.env.NODE_ENV}` });
  *   password: process.env.DB_PASSWORD,
  *   database: process.env.DB_NAME,
  */
-const config = {
-  development: {
-    client: "pg",
-    connection: {
-      connectionString: `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
-      port: process.env.DB_PORT,
-      database: process.env.DB_NAME,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-    },
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    migrations: {
-      tableName: "knex_migrations",
-    },
+const config: Knex.Config = {
+  client: 'pg',
+  connection: {
+    connectionString: `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
+    port: Number(process.env.DB_PORT) || 5432,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+  },
+  pool: {
+    min: 2,
+    max: 10,
+  },
+  migrations: {
+    directory: './migrations',
+    tableName: 'knex_migrations',
   },
 
   // todo
@@ -48,5 +48,7 @@ const config = {
   //   }
   // }
 };
+
+console.log(config);
 
 export default config;
