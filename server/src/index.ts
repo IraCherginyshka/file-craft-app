@@ -51,3 +51,5 @@ app.use(errorHandler);
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}!`);
 });
+
+export default app;

@@ -1,4 +1,4 @@
-import api from "../lib/axios";
+import api from '../lib/axios';
 
 export type User = {
   id: number;
@@ -7,6 +7,6 @@ export type User = {
 };
 
 export const fetchFirstUser = async () => {
-  const response = await api.get<User>("/users/first-user");
+  const response = await api.get<User>('/users/first-user');
   return response.data;
 };
