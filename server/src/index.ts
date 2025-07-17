@@ -1,10 +1,8 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-import router from "./routes/index.js";
 
-// set up access to the .env.development file with variables
-dotenv.config({ path: `../.env.${process.env.NODE_ENV}` });
+import router from "./routes";
+import { errorHandler } from "./middlewares/errorHandler";
 
 const app = express();
 // MIDDLEWARES
@@ -43,6 +41,10 @@ app.get("/", (req, res) => {
 
 app.use(router);
 
+app.use(errorHandler);
+
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}!`);
 });
+
+export default app;
