@@ -6,7 +6,7 @@
     "test": "jest",
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "NODE_ENV=development nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "dev": "NODE_ENV=development dotenvx run -f .env.development -- nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "lint": "eslint 'src/**/*.ts'",
     "migrate": "npx knex migrate:latest --knexfile src/db/knexfile.ts"
   },
@@ -14,10 +14,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.47.6",
     "@types/knex": "^0.15.2",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "knex": "^3.1.0",
     "pg": "^8.16.0",

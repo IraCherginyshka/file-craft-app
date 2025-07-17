@@ -1,8 +1,4 @@
-import dotenv from "dotenv";
 import { Knex } from "knex";
-
-// todo prod
-dotenv.config();
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
