@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-import { Knex } from 'knex';
+import dotenv from "dotenv";
+import { Knex } from "knex";
 
 // todo prod
 dotenv.config();
@@ -14,7 +14,7 @@ dotenv.config();
  *   database: process.env.DB_NAME,
  */
 const config: Knex.Config = {
-  client: 'pg',
+  client: "pg",
   connection: {
     connectionString: `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
     port: Number(process.env.DB_PORT) || 5432,
@@ -27,8 +27,8 @@ const config: Knex.Config = {
     max: 10,
   },
   migrations: {
-    directory: './migrations',
-    tableName: 'knex_migrations',
+    directory: "./migrations",
+    tableName: "knex_migrations",
   },
 
   // todo

@@ -1,9 +1,9 @@
 // import Image from "next/image";
 // import { Button } from "@/components/ui/button";
-'use client'; // if using Next.js App Router
+"use client"; // if using Next.js App Router
 
-import { useEffect, useState } from 'react';
-import { fetchFirstUser, User } from '@/services/firstUserService';
+import { useEffect, useState } from "react";
+import { fetchFirstUser, User } from "@/services/firstUserService";
 
 export default function HomePage() {
   const [user, setUser] = useState<User | null>(null);
@@ -11,7 +11,7 @@ export default function HomePage() {
   useEffect(() => {
     fetchFirstUser()
       .then(setUser)
-      .catch((err) => console.error('Error fetching user:', err));
+      .catch((err) => console.error("Error fetching user:", err));
   }, []);
 
   if (!user) return <p>Loading...</p>;

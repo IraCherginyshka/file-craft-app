@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
-import { createUserService } from '../services/usersService';
-import { User } from '../models/user';
+import { Request, Response, NextFunction } from "express";
+import { createUserService } from "../services/usersService";
+import { User } from "../models/user";
 
 export const createUserController = async (
   req: Request,

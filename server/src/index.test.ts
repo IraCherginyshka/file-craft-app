@@ -1,14 +1,14 @@
-import request from 'supertest';
-import app from './index';
+import request from "supertest";
+import app from "./index";
 
-describe('APP tests', () => {
+describe("APP tests", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('It should response the GET method', (done) => {
+  it("It should response the GET method", (done) => {
     request(app)
-      .get('/')
+      .get("/")
       .then((response) => {
         expect(response.statusCode).toBe(200);
         done();

@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
+import { Request, Response } from "express";
 
-describe('Users Controller', () => {
-  it('Should return 200 OK', async () => {
+describe("Users Controller", () => {
+  it("Should return 200 OK", async () => {
     // Create mock objects for Request, Response, and NextFunction
     const req = {} as Request;
     const res = {

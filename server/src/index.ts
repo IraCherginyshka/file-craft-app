@@ -1,9 +1,9 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
 
-import router from './routes';
-import { errorHandler } from './middlewares/errorHandler';
+import router from "./routes";
+import { errorHandler } from "./middlewares/errorHandler";
 
 // set up access to the .env file with variables
 // dotenv.config({ path: `../.env.${process.env.NODE_ENV}` });
@@ -40,8 +40,8 @@ app.use(express.urlencoded({ extended: true }));
 // 4.	Backend records file metadata in DB (filename, owner, date, etc.)
 // 5.	For download, frontend requests /files/:id/download-url → gets a time-limited signed URL
 
-app.get('/', (req, res) => {
-  res.status(200).send('ok');
+app.get("/", (req, res) => {
+  res.status(200).send("ok");
 });
 
 app.use(router);
